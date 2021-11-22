@@ -27,12 +27,20 @@ body {
 }
 
 .header {
+  font-size: 32px;
   text-align: center;
   font-family: var(--main-font);
 }
 
+@media (max-width: 360px) {
+  .header {
+    font-size: 26px;
+  }
+}
+
 .colorInput {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }
 
 .colorLabel {
@@ -44,6 +52,13 @@ body {
   border: 2px solid #ffffff;
 
   border-radius: 100%;
+}
+
+@media (max-width: 615px) {
+  .colorLabel {
+    top: unset;
+    bottom: 40px;
+  }
 }
 
 .colorLabel::after {
@@ -111,18 +126,28 @@ body {
   line-height: 30px;
 }
 
+.root {
+  text-align: center;
+}
+
 .board {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
   margin: 0 auto 20px;
   padding: 0;
-  width: 310px;
 
   background-color: rgb(224, 224, 224);
 
   list-style-type: none;
+}
+
+@media (max-width: 350px) {
+  .board {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+  }
 }
 
 .cell {
@@ -207,6 +232,18 @@ body {
 
 .controls__button:not(:last-child) {
   margin-right: 20px;
+}
+
+@media (max-width: 350px) {
+  .controls__button {
+    padding: 5px 10px;
+
+    font-size: 14px;
+  }
+
+  .controls__button:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .controls__button:hover,
