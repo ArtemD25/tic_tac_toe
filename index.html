@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-tac-toe</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+  <h1 class="header">Tic-tac-toe game for two</h1>
+  <section class="colors">
+    <h2 class="visually-hidden">Color pickers</h2>
+    <label class="colorLabel colorLabel1" for="color1"><span class="visually-hidden">Color picker input for background-color 1</span></label>
+    <input class="colorInput" type="color" id="color1" data-color="1">
+    <label class="colorLabel colorLabel2" for="color2"><span class="visually-hidden">Color picker input for background-color 2</span> </label>
+    <input class="colorInput" type="color" id="color2" data-color="2">
+  </section>
+  <section class="scores">
+    <h2 class="visually-hidden">Game scores section</h2>
+    <ul class="scores-wrapper">
+      <li class="scores__score">
+        <svg class="scores__figure scores__figure--cross" viewBox="0 0 31.112 31.112" fill="#000000">
+          <polygon points="31.112,1.414 29.698,0 15.556,14.142 1.414,0 0,1.414 14.142,15.556 0,29.698 1.414,31.112 15.556,16.97 
+	29.698,31.112 31.112,29.698 16.97,15.556 " />
+        </svg>
+        <span class="scores__colon">:</span>
+        <span class="scores__result scores__result--cross" id="crossScore">0</span>
+      </li>
+      <li class="scores__score">
+        <svg class="scores__figure scores__figure--circle" role="img" viewBox="0 0 512 512">
+          <path fill="#000000"
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z">
+          </path>
+        </svg>
+        <span class="scores__colon">:</span>
+        <span class="scores__result scores__result--circle" id="circleScore">0</span>
+      </li>
+    </ul>
+  </section>
+  <main class="root">
+    <h2 class="visually-hidden">Game board with 9 cells to paste crosses and circles</h2>
+    <ul class="board" id="board">
+      <li class="cell" data-cell="1"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="2"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="3"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="4"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="5"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="6"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="7"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="8"><span class="cross">×</span><span class="circle">◯</span></li>
+      <li class="cell" data-cell="9"><span class="cross">×</span><span class="circle">◯</span></li>
+    </ul>
+    <ul class="controls">
+      <li class="controls__control">
+        <button class="controls__button" id="restartBtn">Restart game</button>
+        <button class="controls__button" id="nullBtn">Reset score</button>
+      </li>
+    </ul>
+  </main>
+  <article class="modal" id="modal">
+    <h2 class="visually-hidden">Modal window that alerts messages to user</h2>
+    <p class="modal__text" id="modal__text">Some message</p>
+  </article>
+  <script src="./script.js"></script>
+</body>
+</html>
